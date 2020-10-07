@@ -11,7 +11,7 @@ const port = process.env.PORT || 5000;
 app.use(cors()); //middleware
 app.use(express.json()); //allows to parse json
 
-const uri  = 'mongodb+srv://jasonex732:jasonex732@cluster0-izyis.gcp.mongodb.net/test?retryWrites=true&w=majority'//process.env.ALTAS_URI; //database uri, get from mongodb
+const uri  = process.env.ATLAS_URI; //database uri, get from mongodb
 
 mongoose.connect(uri, {useNewUrlParser : true, useCreateIndex: true, useUnifiedTopology: true}); //connect to database
 const connection = mongoose.connection;
